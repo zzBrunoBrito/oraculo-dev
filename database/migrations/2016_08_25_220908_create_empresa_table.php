@@ -16,6 +16,8 @@ class CreateEmpresaTable extends Migration
             $table->increments('id');
             $table->string('nome');
             $table->string('cnpj')->unique();
+            $table->string('email')->unique();
+            $table->integer('nivel')->default(3);
             $table->string('password');
             $table->string('telefone');
             $table->rememberToken()->nullable();

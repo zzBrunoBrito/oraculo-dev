@@ -17,7 +17,7 @@ class CreateUserProfTable extends Migration
             $table->string('login');
             $table->string('email')->unique();
             $table->string('password');
-            $table->integer('nivel')->default(3);
+            $table->integer('nivel')->default(4);
             $table->rememberToken();
             $table->timestamps();
         });
