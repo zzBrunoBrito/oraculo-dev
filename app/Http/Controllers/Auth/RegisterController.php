@@ -63,13 +63,15 @@ class RegisterController extends Controller
      */
     protected function create(Request $data)
     {
-        return Empresa::create([
+        Empresa::create([
             'nome' => $data['nome'],
             'email' => $data['email'],
             'cnpj' => $data['cnpj'],
-	    'nivel' => 3,
+            'nivel' => 3,
             'telefone' => $data['telefone'],
             'password' => $data['password'],
         ]);
+
+        return redirect()->route('/');
     }
 }
