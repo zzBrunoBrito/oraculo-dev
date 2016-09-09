@@ -13,11 +13,7 @@ return [
     |
     */
 
-<<<<<<< HEAD
     'fetch' => PDO::FETCH_CLASS,
-=======
-    'fetch' => PDO::FETCH_OBJ,
->>>>>>> 1a05baaae7327436962a6791d17584cfae3193aa
 
     /*
     |--------------------------------------------------------------------------
@@ -66,11 +62,7 @@ return [
             'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix' => '',
-<<<<<<< HEAD
             'strict' => false,
-=======
-            'strict' => true,
->>>>>>> 1a05baaae7327436962a6791d17584cfae3193aa
             'engine' => null,
         ],
 
@@ -78,22 +70,12 @@ return [
             'driver' => 'pgsql',
             'host' => env('DB_HOST', 'localhost'),
             'port' => env('DB_PORT', '5432'),
-<<<<<<< HEAD
             'database' => env('DB_DATABASE', 'oraculo'),
             'username' => env('DB_USERNAME', 'root'),
             'password' => env('DB_PASSWORD', '1234'),
             'charset' => 'utf8',
             'prefix' => '',
             'schema' => 'public',
-=======
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
-            'charset' => 'utf8',
-            'prefix' => '',
-            'schema' => 'public',
-            'sslmode' => 'prefer',
->>>>>>> 1a05baaae7327436962a6791d17584cfae3193aa
         ],
 
     ],
