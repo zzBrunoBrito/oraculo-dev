@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 <div class="container">
     <div class="row">
@@ -11,7 +10,7 @@
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->first('cnpj') ? ' has-error' : '' }}">
-                            <label for="cnkp" class="col-md-4 control-label">CNPJ</label>
+                            <label for="cnkp" class="col-md-4 control-label">CNPJ ou Email</label>
 
                             <div class="col-md-6">
                                 <input id="cnpj" type="text" class="form-control" name="cnpj" value="{{ old('cnpj') }}">

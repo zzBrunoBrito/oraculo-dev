@@ -28,6 +28,20 @@
                             <label for="cnpj" class="col-md-4 control-label">CNPJ</label>
 
                             <div class="col-md-6">
+                                <input id="cnpj" type="text" class="form-control" name="cnpj" value="{{ old('email') }}">
+
+                                @if ($errors->has('cnpj'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('cnpj') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                            <label for="cnpj" class="col-md-4 control-label">Email</label>
+
+                            <div class="col-md-6">
                                 <input id="cnpj" type="email" class="form-control" name="cnpj" value="{{ old('email') }}">
 
                                 @if ($errors->has('email'))
@@ -39,19 +53,19 @@
                         </div>
 
 
-                                                                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                                                                            <label for="password" class="col-md-4 control-label">Telefone</label>
+                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                            <label for="telefone" class="col-md-4 control-label">Telefone</label>
 
-                                                                            <div class="col-md-6">
-                                                                                <input id="telefone" type="text" class="form-control" name="telefone">
+                             <div class="col-md-6">
+                                 <input id="telefone" type="text" class="form-control" name="telefone">
 
-                                                                                @if ($errors->has('password'))
-                                                                                    <span class="help-block">
-                                                                                        <strong>{{ $errors->first('password') }}</strong>
-                                                                                    </span>
-                                                                                @endif
-                                                                            </div>
-                                                                        </div>
+                                 @if ($errors->has('telefone'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('telefone') }}</strong>
+                                    </span>
+                                 @endif
+                             </div>
+                        </div>
 
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
