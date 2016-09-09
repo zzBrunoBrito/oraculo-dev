@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User;
+use App\Empresa;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -20,7 +21,7 @@ class RegisterController extends Controller
     |
     */
 
-    use RegistersUsers;
+    //use RegistersUsers;
 
     /**
      * Where to redirect users after login / registration.
@@ -44,7 +45,7 @@ class RegisterController extends Controller
      *
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
-     */
+     
     protected function validator(array $data)
     {
         return Validator::make($data, [
@@ -52,7 +53,7 @@ class RegisterController extends Controller
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
         ]);
-    }
+    }*/
 
     /**
      * Create a new user instance after a valid registration.
@@ -60,12 +61,15 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return User
      */
-    protected function create(array $data)
+    protected function create(Request $data)
     {
-        return User::create([
-            'name' => $data['name'],
+        return Empresa::create([
+            'nome' => $data['nome'],
             'email' => $data['email'],
-            'password' => bcrypt($data['password']),
+            'cnpj' => $data['cnpj'],
+	    'nivel' => 3,
+            'telefone' => $data['telefone'],
+            'password' => $data['password'],
         ]);
     }
 }
