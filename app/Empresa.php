@@ -2,9 +2,9 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Empresa extends Model
+class Empresa extends Authenticatable
 {
     protected $table = 'empresa';    
     public $timestamps = false;

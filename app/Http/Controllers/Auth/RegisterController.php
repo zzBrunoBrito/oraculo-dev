@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User;
+use App\Empresa;
 use Validator;
 use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -20,14 +20,7 @@ class RegisterController extends Controller
     |
     */
 
-    use RegistersUsers;
-
-    /**
-     * Where to redirect users after login / registration.
-     *
-     * @var string
-     */
-    protected $redirectTo = '/home';
+    //use RegistersUsers;
 
     /**
      * Create a new controller instance.
@@ -36,7 +29,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        $this->middleware('guest', ['except' => 'doValidate', 'create']);
     }
 
     /**
@@ -45,13 +38,31 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    protected function validator(array $data)
-    {
-        return Validator::make($data, [
-            'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|min:6|confirmed',
-        ]);
+
+
+    protected function doValidate(Request $data){
+        $data = (array) $data;
+        $rules = [
+            'nome' => 'required|max:255',
+            'email' => 'required|max:255|email|unique:empresa',
+            'cnpj' => 'required|max:255|unique:empresa',
+            'telefone' => 'max:255',
+        ];
+
+        $messages = [
+            'required' => 'O campo :attribute é obrigatório',
+            'max' => 'A quantidade de caracteres não deve ultrapassar :size',
+            'email' => 'O campo :attribute deve ser um email válido',
+            'unique' => 'Este :attibute já foi cadastrado',
+        ];
+
+        $validator = Validator::make($data, $rules, $messages);
+
+        if ($validator->fails()){
+            return redirect('/register')
+                ->withErrors($validator)
+                ->withInput();
+        }
     }
 
     /**
@@ -60,12 +71,19 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return User
      */
-    protected function create(array $data)
+    protected function create(Request $data)
     {
-        return User::create([
-            'name' => $data['name'],
+
+        $this->doValidate($data);
+        Empresa::create([
+            'nome' => $data['nome'],
             'email' => $data['email'],
+            'cnpj' => $data['cnpj'],
+            'nivel' => 3,
+            'telefone' => $data['telefone'],
             'password' => bcrypt($data['password']),
         ]);
+
+        return redirect()->route('login');
     }
 }
