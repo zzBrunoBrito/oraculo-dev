@@ -41,7 +41,6 @@ class RegisterController extends Controller
 
 
     protected function doValidate(Request $data){
-        $data = (array) $data;
         $rules = [
             'nome' => 'required|max:255',
             'email' => 'required|max:255|email|unique:empresa',
@@ -49,20 +48,17 @@ class RegisterController extends Controller
             'telefone' => 'max:255',
         ];
 
-        $messages = [
-            'required' => 'O campo :attribute é obrigatório',
-            'max' => 'A quantidade de caracteres não deve ultrapassar :size',
-            'email' => 'O campo :attribute deve ser um email válido',
-            'unique' => 'Este :attibute já foi cadastrado',
-        ];
+        $this->validate($data, $rules);
 
-        $validator = Validator::make($data, $rules, $messages);
 
-        if ($validator->fails()){
-            return redirect('/register')
-                ->withErrors($validator)
-                ->withInput();
-        }
+        /*
+                $validator = Validator::make($data, $rules, $messages);
+
+                if ($validator->fails()){
+                    return redirect('/register')
+                        ->withErrors($validator)
+                        ->withInput();
+                }*/
     }
 
     /**

@@ -26,3 +26,5 @@ Route::get('/login', function (){
 })->name('login');
 
 Route::post('/login', 'Auth\LoginController@authenticate');
+
+Route::get('/logout', 'Auth\LoginController@logout');
