@@ -19,6 +19,10 @@ Route::get('/register', function () {
     return view('auth.register');
 });
 
+Route::get('/home', function () {
+    return view('home');
+});
+
 Route::post('/register', 'Auth\RegisterController@create');
 
 Route::get('/login', function (){

@@ -1,3 +1,4 @@
+@section('title','Oráculo-Login')
 @extends('layouts.app')
 
 @section('content')
@@ -11,7 +12,7 @@
                         {{ csrf_field() }}
 
                         <div class="form-group">
-                            <label for="email" class="col-md-4 control-label">CNPJ</label>
+                            <label for="email" class="col-md-4 control-label">CNPJ ou Email</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="text" class="form-control" name="userNameInput">
@@ -48,7 +49,7 @@
                                     <i class="fa fa-btn fa-sign-in"></i> Login
                                 </button>
 
-                                <a class="btn btn-link" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
+                                <a class="btn btn-link" href="{{ url('/password/reset') }}">Esqueceu Sua Senha?</a>
                             </div>
                         </div>
                     </form>

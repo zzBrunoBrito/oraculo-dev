@@ -79,7 +79,7 @@ return [
     ],
     'string'               => 'The :attribute must be a string.',
     'timezone'             => 'The :attribute must be a valid zone.',
-    'unique'               => 'Este :attibute já foi cadastrado.',
+    'unique'               => 'Este :attribute já foi cadastrado.',
     'url'                  => 'The :attribute format is invalid.',
 
     /*
