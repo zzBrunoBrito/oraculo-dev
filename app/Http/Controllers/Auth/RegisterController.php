@@ -46,19 +46,11 @@ class RegisterController extends Controller
             'email' => 'required|max:255|email|unique:empresa',
             'cnpj' => 'required|max:255|unique:empresa',
             'telefone' => 'max:255',
+            'password' => 'required|max:255|confirmed',
         ];
 
         $this->validate($data, $rules);
 
-
-        /*
-                $validator = Validator::make($data, $rules, $messages);
-
-                if ($validator->fails()){
-                    return redirect('/register')
-                        ->withErrors($validator)
-                        ->withInput();
-                }*/
     }
 
     /**
