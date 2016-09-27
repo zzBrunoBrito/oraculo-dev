@@ -29,25 +29,17 @@ class LoginController extends Controller
         $this->middleware('guest', ['except' => 'logout', 'authenticate']);
     }
 
-    public function doValidate(Request $data){
-        $rules = [
-            'userNameInput' => 'required|max:255',
-            'password' => 'required|max:255|exists:users',
-        ];
-
-        $this->validate($data, $rules);
-    }
-
 
     public function authenticate(Request $data){
 
-        $this->doValidate($data);
         $field = filter_var($data['userNameInput'], FILTER_VALIDATE_EMAIL) ? 'email' : 'cnpj';
         if (Auth::attempt( [ $field => $data['userNameInput'], 'password' => $data['password' ] ])){
             return redirect()->route('/');
         }
         else{
-            return redirect()->route('login');
+            return redirect()->route('login')
+                ->withErrors(['Credenciais inválidas'])
+                ->withInput();
         }
 
     }
