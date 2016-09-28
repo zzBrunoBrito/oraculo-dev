@@ -15,12 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 }) -> name('/');
 
-Route::get('/register', function () {
-    return view('auth.register');
-});
-
 Route::get('/home', function () {
     return view('home');
+}) -> name('home');
+
+Route::get('/register', function () {
+    return view('auth.register');
 });
 
 Route::post('/register', 'Auth\RegisterController@create');
@@ -32,3 +32,9 @@ Route::get('/login', function (){
 Route::post('/login', 'Auth\LoginController@authenticate');
 
 Route::get('/logout', 'Auth\LoginController@logout');
+
+Route::get('/registerprof', function () {
+    return view('auth.registerprof');
+});
+
+Route::post('/registerprof', 'Auth\RegisterprofController@create');

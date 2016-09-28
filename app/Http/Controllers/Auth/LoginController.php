@@ -34,7 +34,7 @@ class LoginController extends Controller
 
         $field = filter_var($data['userNameInput'], FILTER_VALIDATE_EMAIL) ? 'email' : 'cnpj';
         if (Auth::attempt( [ $field => $data['userNameInput'], 'password' => $data['password' ] ])){
-            return redirect()->route('/');
+            return redirect()->route('home');
         }
         else{
             return redirect()->route('login')

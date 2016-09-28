@@ -1,6 +1,7 @@
 @section('title','Oráculo-Login')
 @extends('layouts.app')
 
+@if (!Auth::user())
 @section('content')
 <div class="container">
     <div class="row">
@@ -69,3 +70,28 @@
     </div>
 </div>
 @endsection
+@else
+    
+    @section('content')
+
+    <div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <!-- <div class="panel-heading">Menu</div> !-->
+
+                <div class="panel-body">
+                    Você já está logado!</br>
+                    Redirecionando...
+                    <?php
+                    header( "refresh:3;url=/home" );
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+    @endsection
+@endif
