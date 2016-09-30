@@ -3,12 +3,12 @@
 //  */
 
 
-$("ul.navbar-nav>li.dropdown").hover(function () {
-    $(this).children().children().animate({
+$("ul>li.dropdown").hover(function () {
+    $(this).children().children("span").animate({
         opacity: 1,
     },"fast")
 }, function () {
-    $(this).children().children().animate({
+    $(this).children().children("span").animate({
         opacity: 0.3
     },"fast")
 });
