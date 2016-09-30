@@ -30,5 +30,16 @@
             </div>
         </div>
     </div>
+    <div class="container-fluid">
+        <div class="panel panel-default">
+            <div class="panel-heading">Notificações</div>
+            <div class="panel-body">
+                <div class="jumbotron">teste</div>
+                <div class="jumbotron">teste</div>
+                <div class="jumbotron">teste</div>
+                <div class="jumbotron">teste</div>
+            </div>
+        </div>
+    </div>
 </div>
 @endsection
