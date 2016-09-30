@@ -45,7 +45,6 @@ class CreateUserProfTable extends Migration
             $table->integer('end_id')->unsigned();
             $table->foreign('end_id')->references('id')->on('endereco')->onDelete('cascade');
             $table->string('telefone');
-            $table->string('email')->unique();
             $table->integer('status');
             $table->dropForeign(['id']);
             $table->dropForeign(['end_id']);
