@@ -1,0 +1,8 @@
+.unstyled{
+    text-decoration: none;
+    list-style-type: none;
+}
+
+span.caret{
+    opacity: 0.3;
+}
