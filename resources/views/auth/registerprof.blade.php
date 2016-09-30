@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Register</div>
+                <div class="panel-heading">Registro</div>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
                         {{ csrf_field() }}
@@ -20,25 +20,12 @@
                                 </ul>
                             </div>
                         @endif
-                        <div class="form-group{{ $errors->has('nome') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">Nome</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="nome" value="{{ old('name') }}">
-
-                                @if ($errors->has('name'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
 
 			<div class="form-group">
-                            <label for="cnpj" class="col-md-4 control-label">CNPJ</label>
+                            <label for="login" class="col-md-4 control-label">Login</label>
 
                             <div class="col-md-6">
-                                <input id="cnpj" type="text" class="form-control" name="cnpj" >
+                                <input id="login" type="text" class="form-control" name="login" >
 
                             </div>
                         </div>
@@ -71,21 +58,101 @@
                               
                             </div>
                         </div>
+                        <fieldset><legend>Dados Pessoais</legend>
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                                                    <label for="phone" class="col-md-4 control-label">Telefone</label>
 
-                                                    <div class="col-md-6">
-                                                        <input id="phone" type="text" class="form-control" name="telefone" value="{{ old('name') }}">
+                            <div class="form-group">
+                            <label for="nome" class="col-md-4 control-label">Nome</label>
 
-                                                        @if ($errors->has('name'))
-                                                            <span class="help-block">
-                                                                <strong>{{ $errors->first('name') }}</strong>
-                                                            </span>
-                                                        @endif
-                                                    </div>
-                                                </div>
+                            <div class="col-md-6">
+                                <input id="nome" type="text" class="form-control" name="nome">
 
+                            </div>
+                            </div>
+
+                            <div class="form-group">
+                            <label for="cargo" class="col-md-4 control-label">Cargo</label>
+
+                            <div class="col-md-6">
+                                <input id="cargo" type="text" class="form-control" name="cargo">
+
+                            </div>
+                            </div>
+
+                            <div class="form-group">
+                            <label for="dtnasc" class="col-md-4 control-label">Data de Nasc.</label>
+
+                            <div class="col-md-6">
+                                <input id="dtnasc" type="date" class="form-control" name="dtnasc">
+
+                            </div>
+                            </div>
+
+                            <label for="phone" class="col-md-4 control-label">Telefone</label>
+
+                             <div class="col-md-6">
+                                <input id="phone" type="text" class="form-control" name="telefone">
+                                  </div>
+                                 </div>
+
+                            <div class="form-group">
+                            <label for="pais" class="col-md-4 control-label">País</label>
+
+                            <div class="col-md-6">
+                                <input id="pais" type="text" class="form-control" name="pais">
+
+                            </div>
+                            </div>
+
+                            <div class="form-group">
+                            <label for="cidade" class="col-md-4 control-label">Cidade.</label>
+
+                            <div class="col-md-6">
+                                <input id="cidade" type="text" class="form-control" name="cidade">
+
+                            </div>
+                            </div>
+
+                            <div class="form-group">
+                            <label for="estado" class="col-md-4 control-label">Estado</label>
+
+                            <div class="col-md-6">
+                                <input id="estado" type="text" class="form-control" name="estado">
+
+                            </div>
+                            </div>
+
+                            <div class="form-group">
+                            <label for="rua" class="col-md-4 control-label">Rua</label>
+
+                            <div class="col-md-6">
+                                <input id="rua" type="text" class="form-control" name="rua">
+
+                            </div>
+                            </div>
+
+                            <div class="form-group">
+                            <label for="numero" class="col-md-4 control-label">Numero</label>
+
+                            <div class="col-md-6">
+                                <input id="numero" type="number" class="form-control" name="numero">
+
+                            </div>
+                            </div>
+
+                            <div class="form-group">
+                            <label for="cep" class="col-md-4 control-label">CEP</label>
+
+                            <div class="col-md-6">
+                                <input id="cep" type="text" class="form-control" name="cep">
+
+                            </div>
+                            </div>
+
+
+
+                        </fieldset>
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
