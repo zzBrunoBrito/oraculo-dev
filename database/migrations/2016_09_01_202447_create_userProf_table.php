@@ -12,6 +12,8 @@ class CreateUserProfTable extends Migration
      */
     public function up()
     {
+
+
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
             $table->string('login');
@@ -20,6 +22,19 @@ class CreateUserProfTable extends Migration
             $table->integer('nivel')->default(4);
             $table->rememberToken();
             $table->timestamps();
+        });
+
+        Schema::create('profissional', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->string('cargo');
+            $table->date('dtNasc');
+            $table->string('telefone');
+            $table->integer('status');
+            $table->integer('users_id')->unsigned();
+            $table->foreign('users_id')->references('id')->on('users')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
 
         Schema::create('endereco', function(Blueprint $table){
@@ -31,23 +46,11 @@ class CreateUserProfTable extends Migration
             $table->string('numero');
             $table->string('cep');
             $table->string('complemento')->nullable();
+            $table->integer('profissional_id')->unsigned()->nullable();
+            $table->foreign('profissional_id')->references('id')->on('profissional')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
 
-        });
-
-        Schema::create('profissional', function (Blueprint $table) {
-            $table->integer('id')->unsigned();
-            $table->foreign('id')->references('id')->on('users')->onDelete('cascade');
-            $table->integer('emp_id')->unsigned();
-            $table->foreign('emp_id')->references('id')->on('empresa')->onDelete('cascade');
-            $table->string('name');
-            $table->string('cargo');
-            $table->date('dtNasc');
-            $table->integer('end_id')->unsigned();
-            $table->foreign('end_id')->references('id')->on('endereco')->onDelete('cascade');
-            $table->string('telefone');
-            $table->integer('status');
-            $table->dropForeign(['id']);
-            $table->dropForeign(['end_id']);
         });
 
     }

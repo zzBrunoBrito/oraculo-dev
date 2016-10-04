@@ -33,8 +33,8 @@ Route::post('/login', 'Auth\LoginController@authenticate');
 
 Route::get('/logout', 'Auth\LoginController@logout');
 
-Route::get('/registerprof', function () {
+Route::get('/register-prof', function () {
     return view('auth.registerprof');
 });
 
-Route::post('/registerprof', 'Auth\RegisterprofController@create');
+Route::post('/register-prof', 'Auth\RegisterProfController@create');

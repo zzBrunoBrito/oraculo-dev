@@ -8,7 +8,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Registro</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/register-prof') }}">
                         {{ csrf_field() }}
 
                         @if(count($errors) > 0)
@@ -84,7 +84,7 @@
                             <label for="dtnasc" class="col-md-4 control-label">Data de Nasc.</label>
 
                             <div class="col-md-6">
-                                <input id="dtnasc" type="date" class="form-control" name="dtnasc">
+                                <input id="dtnasc" type="date" class="form-control" name="dtNasc">
 
                             </div>
                             </div>

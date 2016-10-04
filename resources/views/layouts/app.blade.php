@@ -65,7 +65,7 @@
                             <li><a href="#">Componentes</a></li>
                             <li><a href="#">Peças</a></li>
                             <li><a href="#">Materiais</a></li>
-                            <li><a href="/registerprof">Profissionais</a></li>
+                            <li><a href="/register-prof">Profissionais</a></li>
                         </ul>
                     </li>
 
