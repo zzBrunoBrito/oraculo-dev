@@ -16,8 +16,8 @@ class CreateUserProfTable extends Migration
 
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('login');
-            $table->string('email')->unique();
+            $table->string('login')->unique();//é o cnpj da empresa
+            $table->string('email') ->unique();
             $table->string('password');
             $table->integer('nivel')->default(4);
             $table->rememberToken();

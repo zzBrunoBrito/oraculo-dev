@@ -14,13 +14,13 @@ class CreateEmpresaTable extends Migration
     {
         Schema::create('empresa', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('users_id')->unsigned();
             $table->string('nome');
-            $table->string('cnpj')->unique();
-            $table->string('email')->unique();
-            $table->integer('nivel')->default(3);
-            $table->string('password');
             $table->string('telefone');
             $table->rememberToken()->nullable();
+            $table->foreign('users_id')->references('users')->on('id')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
 
     }
