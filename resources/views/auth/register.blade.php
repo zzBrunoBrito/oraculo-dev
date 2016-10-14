@@ -38,7 +38,7 @@
                             <label for="cnpj" class="col-md-4 control-label">CNPJ</label>
 
                             <div class="col-md-6">
-                                <input id="cnpj" type="text" class="form-control" name="cnpj" >
+                                <input id="login" type="text" class="form-control" name="login" >
 
                             </div>
                         </div>

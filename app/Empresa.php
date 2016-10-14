@@ -16,4 +16,8 @@ class Empresa extends Authenticatable
     protected $hidden = [
             'password'. 'remember_token',
         ];
+
+    public function user(){
+ 	    return $this->belongsTo('App\User', 'users_id');
+    }
 }

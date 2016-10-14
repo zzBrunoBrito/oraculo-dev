@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'login', 'email', 'password',
+        'login', 'email', 'password', 'nivel'
     ];
 
     /**
@@ -29,5 +29,9 @@ class User extends Authenticatable
 
     public function profissional(){
         return $this->hasOne('App\Profissional', 'users_id');
+    }
+
+    public function empresa(){
+        return $this->hasOne('App\Empresa', 'users_id');
     }
 }

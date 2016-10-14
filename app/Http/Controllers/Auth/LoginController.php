@@ -32,8 +32,9 @@ class LoginController extends Controller
 
     public function authenticate(Request $data){
 
-        $field = filter_var($data['userNameInput'], FILTER_VALIDATE_EMAIL) ? 'email' : 'cnpj';
+        $field = filter_var($data['userNameInput'], FILTER_VALIDATE_EMAIL) ? 'email' : 'login';
         if (Auth::attempt( [ $field => $data['userNameInput'], 'password' => $data['password' ] ])){
+            $data->session()->put('nome',(Auth::user()->nivel==3) ? Auth::user()->empresa->nome : Auth::user()->profissional->name );
             return redirect()->route('home');
         }
         else{

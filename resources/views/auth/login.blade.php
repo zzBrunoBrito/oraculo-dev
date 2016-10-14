@@ -1,7 +1,7 @@
 @section('title','Oráculo-Login')
 @extends('layouts.app')
 
-@if (!Auth::user())
+@if (!Auth::check())
 @section('content')
 <div class="container">
     <div class="row">
@@ -43,7 +43,7 @@
                                 @endif
                             </div>
                         </div>
-
+            <!--
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <div class="checkbox">
@@ -53,7 +53,7 @@
                                 </div>
                             </div>
                         </div>
-
+            !-->
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">

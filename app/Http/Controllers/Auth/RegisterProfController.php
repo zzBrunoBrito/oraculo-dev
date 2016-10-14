@@ -26,7 +26,7 @@ class RegisterProfController extends Controller
             'login' => $data['login'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-            'nivel' => 3,
+            'nivel' => '4',
         ];
 
         $profissionalData = [
@@ -51,9 +51,13 @@ class RegisterProfController extends Controller
         $profissional = new Profissional($profissionalData);
         $endereco = new Endereco($enderecoData);
 
+        $user->create($userData)->profissional()->create($profissionalData)->endereco()->create($enderecoData);
+
+        /*
         $user->save();
         $user->profissional()->save($profissional);
         $profissional->endereco()->save($endereco);
+        */
 
         return redirect()->route('home');
     }

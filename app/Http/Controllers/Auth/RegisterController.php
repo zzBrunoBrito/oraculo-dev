@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Empresa;
+use App\User;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -43,8 +44,8 @@ class RegisterController extends Controller
     protected function doValidate(Request $data){
         $rules = [
             'nome' => 'required|max:255',
-            'email' => 'required|max:255|email|unique:empresa',
-            'cnpj' => 'required|max:255|unique:empresa',
+            'email' => 'required|max:255|email|unique:users',
+            'login' => 'required|max:255|unique:users',
             'telefone' => 'max:255',
             'password' => 'required|max:255|confirmed',
         ];
@@ -63,14 +64,23 @@ class RegisterController extends Controller
     {
 
         $this->doValidate($data);
-        Empresa::create([
-            'nome' => $data['nome'],
+
+        $userData = [
+            'login' => $data['login'],
             'email' => $data['email'],
-            'cnpj' => $data['cnpj'],
-            'nivel' => 3,
-            'telefone' => $data['telefone'],
             'password' => bcrypt($data['password']),
-        ]);
+            'nivel' => '3',
+        ];
+
+        $empresaData= [
+            'nome' => $data['nome'],
+            'telefone' => $data['telefone'],
+        ];
+
+        $user = new User($userData);
+        $empresa = new Empresa($empresaData);
+
+        $user->create($userData)->empresa()->create($empresaData);
 
         return redirect()->route('login');
     }

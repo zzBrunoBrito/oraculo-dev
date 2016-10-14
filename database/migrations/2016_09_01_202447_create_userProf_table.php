@@ -19,7 +19,7 @@ class CreateUserProfTable extends Migration
             $table->string('login')->unique();//é o cnpj da empresa
             $table->string('email') ->unique();
             $table->string('password');
-            $table->integer('nivel')->default(4);
+            $table->integer('nivel');
             $table->rememberToken();
             $table->timestamps();
         });

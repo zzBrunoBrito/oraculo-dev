@@ -17,8 +17,7 @@ class CreateEmpresaTable extends Migration
             $table->integer('users_id')->unsigned();
             $table->string('nome');
             $table->string('telefone');
-            $table->rememberToken()->nullable();
-            $table->foreign('users_id')->references('users')->on('id')
+            $table->foreign('users_id')->references('id')->on('users')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
         });
