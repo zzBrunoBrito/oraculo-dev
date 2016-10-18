@@ -9,10 +9,15 @@
     <div class="panel panel-default ">
         <div class="panel-heading">Notificações</div>
         <div class="panel-body" style="">
-            <div class="card jumbotron">teste<span class="glyphicon glyphicon-volume-up"></span></div>
-            <div class="card jumbotron">teste</div>
-            <div class="card jumbotron">teste</div>
-            <div class="card jumbotron">teste</div>
+
+            <div class="panel panel-default" id="teste">
+                <div class="panel-body">teste
+                    <button type="button" class="close" data-target="#teste" data-dismiss="alert">
+                        <span class="sr-only">Close</span>Close
+                    </button>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>

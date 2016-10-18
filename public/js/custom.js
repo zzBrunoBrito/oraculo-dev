@@ -12,3 +12,7 @@ $("ul>li.dropdown").hover(function () {
         opacity: 0.3
     },"fast")
 });
+
+$(".div button:first-child").click(function () {
+    $(this).parent().parent().addClass("animated bounceOutRight")
+});
