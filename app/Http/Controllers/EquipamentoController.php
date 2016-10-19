@@ -14,7 +14,7 @@ class EquipamentoController extends Controller
     }
 
     protected function doValidate(){
-
+     //
     }
 
     protected function create(Request $data)
