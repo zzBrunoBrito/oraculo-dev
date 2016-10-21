@@ -9,7 +9,7 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                 <fieldset><legend>Registro de Equipamentos</legend></fieldset>
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/registerequip') }}">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/register-equip') }}">
                         {{ csrf_field() }}
 
                         @if(count($errors) > 0)
@@ -214,7 +214,7 @@
                             <label for="material_nome" class="col-md-4 control-label">Nome</label>
 
                             <div class="col-md-6">
-                                <input id="material_nome" type="text" class="form-control" name="material_nome">
+                                <input id="material_nome" type="text" class="form-control" name="material[1][nome]">
 
                             </div>
                             </div>
@@ -223,7 +223,7 @@
                             <label for="codigo" class="col-md-4 control-label">Codigo</label>
 
                             <div class="col-md-6">
-                                <input id="codigo" type="text" class="form-control" name="codigo">
+                                <input id="codigo" type="text" class="form-control" name="material[1][codigo]">
 
                             </div>
                             </div>
@@ -232,7 +232,7 @@
                             <label for="quantidade" class="col-md-4 control-label">Quantidade</label>
 
                             <div class="col-md-6">
-                                <input id="quantidade" type="text" class="form-control" name="quantidade">
+                                <input id="quantidade" type="text" class="form-control" name="material[1][quantidade]">
 
                             </div>
                             </div>

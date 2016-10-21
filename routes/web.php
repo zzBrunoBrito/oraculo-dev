@@ -39,10 +39,10 @@ Route::get('/register-prof', function () {
 
 Route::post('/register-prof', 'Auth\RegisterProfController@create');
 
-Route::get('/registerequip', function () {
+Route::get('/register-equip', function () {
     return view('auth.registerequip');
 });
 
-Route::post('/registerequip', 'EquipamentoController@create');
+Route::post('/register-equip', 'EquipamentoController@create');
 
 Route::get('/histequip', 'HistEquipController@consulta');

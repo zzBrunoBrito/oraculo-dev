@@ -2,17 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Assistencia_tecnica;
+use App\Contato;
+use App\Equipamento;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use Illuminate\Support\Facades\DB;
-use App\Http\Controllers\Controller;
 
 class EquipamentoController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('guest', ['except' => 'doValidate', 'create']);
+        //$this->middleware('guest', ['except' => 'doValidate', 'create']);
     }
 
     protected function doValidate(){
@@ -21,6 +22,9 @@ class EquipamentoController extends Controller
 
     protected function create(Request $data)
     {
+
+
+
         $equipamentoData = [
             'nome' => $data['nome'],
             'num_patrimonio' => $data['num_patrimonio'],
@@ -53,10 +57,18 @@ class EquipamentoController extends Controller
             'responsavel' => $data['responsavel'],
         ];
 
-        $materialData = [
-            'nome' => $data['material_nome'],
-            'codigo' => $data['codigo'],
-            'quantidade' => $data['quantidade']
-        ];
+        $materialData = $data['material']['1'];
+
+
+        $equipamento = Equipamento::create($equipamentoData);
+        $contato = Contato::create($contatoData);
+        $assistenciaTecnicaData['contato_id'] = $contato->id;
+        $equipamento->assistencia_tecnica()->create($assistenciaTecnicaData);
+        $departamentoData['contato_id'] = $contato->id;
+        $equipamento->departamento()->create($departamentoData);
+        $equipamento->material()->create($materialData);
+
+        return redirect()->route('home');
+
     }
 }

@@ -63,7 +63,7 @@
                     <li class="dropdown">
                         <a class="dropdown-toggle" type="button" data-toggle="dropdown" data-hover="dropdown">Cadastro<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="/registerequip">Equipamentos</a></li>
+                            <li><a href="/register-equip">Equipamentos</a></li>
                             <li><a href="#">Componentes</a></li>
                             <li><a href="#">Peças</a></li>
                             <li><a href="#">Materiais</a></li>

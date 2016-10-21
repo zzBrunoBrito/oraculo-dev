@@ -15,7 +15,7 @@ class CreateDepartamentoTable extends Migration
     {
         Schema::create('departamento', function (Blueprint $table){
             $table->increments('id');
-            $table->integer('contato_id')->unsigned();
+            $table->integer('contato_id')->unsigned()->nullable();
             $table->integer('equipamento_id')->unsigned();
             $table->string('nome');
             $table->string('servico')->nullable();

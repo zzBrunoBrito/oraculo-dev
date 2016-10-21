@@ -15,7 +15,7 @@ class CreateAssistenciaTecnicaTable extends Migration
     {
         Schema::create('assistencia_tecnica', function (Blueprint $table){
             $table->increments('id');
-            $table->integer('contato_id');
+            $table->integer('contato_id')->unsigned()->nullable();
             $table->integer('equipamento_id');
             $table->string('nome');
             $table->foreign('contato_id')->references('id')->on('contato')
