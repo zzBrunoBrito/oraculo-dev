@@ -38,3 +38,11 @@ Route::get('/register-prof', function () {
 });
 
 Route::post('/register-prof', 'Auth\RegisterProfController@create');
+
+Route::get('/registerequip', function () {
+    return view('auth.registerequip');
+});
+
+Route::post('/registerequip', 'EquipamentoController@create');
+
+Route::get('/histequip', 'HistEquipController@consulta');

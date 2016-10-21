@@ -63,7 +63,7 @@
                     <li class="dropdown">
                         <a class="dropdown-toggle" type="button" data-toggle="dropdown" data-hover="dropdown">Cadastro<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Equipamentos</a></li>
+                            <li><a href="/registerequip">Equipamentos</a></li>
                             <li><a href="#">Componentes</a></li>
                             <li><a href="#">Peças</a></li>
                             <li><a href="#">Materiais</a></li>
@@ -92,7 +92,7 @@
                     <li class="dropdown">
                         <a class="dropdown-toggle" type="button" data-toggle="dropdown" data-hover="dropdown">Relatórios<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Histórico do Equipamento</a></li>
+                            <li><a href="/histequip">Histórico do Equipamento</a></li>
                             <li><a href="#">Inventários</a></li>
                             <li><a href="#">Eventos</a></li>
                             <li><a href="#">Ordens do Serviço</a></li>
@@ -147,8 +147,10 @@
 </nav>
 
 
-
+@if(Auth::check())
 @yield('content')
+
+@endif
 
 <!-- JavaScripts -->
 {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>--}}

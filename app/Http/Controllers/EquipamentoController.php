@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 
 class EquipamentoController extends Controller
 {
@@ -54,7 +56,7 @@ class EquipamentoController extends Controller
         $materialData = [
             'nome' => $data['material_nome'],
             'codigo' => $data['codigo'],
-            'quantidade'
+            'quantidade' => $data['quantidade']
         ];
     }
 }
