@@ -1,5 +1,6 @@
 @section('title','Oráculo-Registro')
 @extends('layouts.app')
+@section('res','1')
 
 @section('content')
 <div class="container">
