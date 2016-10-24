@@ -23,7 +23,7 @@
                         @endif
 
                         <div class="form-group">
-                            <label for="email" class="col-md-4 control-label">CNPJ ou Email</label>
+                            <label for="email" class="col-md-4 control-label">CNPJ ou Email ou Login</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="text" class="form-control" name="userNameInput">

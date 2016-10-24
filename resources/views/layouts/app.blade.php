@@ -146,9 +146,11 @@
     </div>
 </nav>
 
-
-
-
+<!--wisney-depois e.e
+@if(Request::url() === 'your url here')
+    // code
+@endif
+!-->
 @yield('content')
 
 

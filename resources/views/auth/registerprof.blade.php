@@ -94,7 +94,7 @@
                             <label for="phone" class="col-md-4 control-label">Telefone</label>
 
                              <div class="col-md-6">
-                                <input id="phone" type="text" class="form-control" name="telefone">
+                                <input id="phone" type="number" class="form-control" name="telefone">
                                   </div>
                                  </div>
 

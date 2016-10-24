@@ -17,10 +17,21 @@ class RegisterProfController extends Controller
         $this->middleware('guest', ['except' => 'create']);
     }
 
+    protected function doValidate(Request $data){
+        $rules = [
+            'email' => 'required|max:255|email|unique:users',
+            'login' => 'required|max:255|unique:users',
+            'password' => 'required|max:255|confirmed',
+        ];
+
+        $this->validate($data, $rules);
+
+    }
+
     protected function create(Request $data)
     {
 
-        //$this->doValidate($data);
+        $this->doValidate($data);
 
         $userData = [
             'login' => $data['login'],

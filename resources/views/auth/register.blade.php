@@ -1,6 +1,5 @@
 @section('title','Oráculo-Registro')
 @extends('layouts.app')
-@section('res','1')
 
 @section('content')
 <div class="container">
@@ -77,7 +76,7 @@
                                                     <label for="phone" class="col-md-4 control-label">Telefone</label>
 
                                                     <div class="col-md-6">
-                                                        <input id="phone" type="text" class="form-control" name="telefone" value="{{ old('name') }}">
+                                                        <input id="phone" type="number" class="form-control" name="telefone" value="{{ old('name') }}">
 
                                                         @if ($errors->has('name'))
                                                             <span class="help-block">

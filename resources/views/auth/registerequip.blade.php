@@ -232,7 +232,7 @@
                             <label for="quantidade" class="col-md-4 control-label">Quantidade</label>
 
                             <div class="col-md-6">
-                                <input id="quantidade" type="text" class="form-control" name="material[1][quantidade]">
+                                <input id="quantidade" type="number" class="form-control" name="material[1][quantidade]">
 
                             </div>
                             </div>
