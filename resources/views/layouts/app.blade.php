@@ -145,16 +145,16 @@
 </nav>
 
 <!--wisney-depois e.e
-@if(Request::url() === 'your url here')
+if(Request::url() === 'your url here')
     // code
-@endif
-
-if(Auth::guest() && $request->path() != 'login')
+endif
+if(Auth::guest() && ((!Route::current()->getName() == '/') ||
+                      (!Route::current()->getName() == 'register') ||
+                      (!Route::current()->getName() == 'login')))
     {
-        return Redirect::guest('login');
+        {{Route::current()->getName()}}
+        redirect('login');
     }
-
-
 
 !-->
 

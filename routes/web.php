@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
     return view('welcome');
-}) -> name('/');
+})-> name('/');
 
 Route::get('/home', function () {
     return view('home');
@@ -21,7 +21,7 @@ Route::get('/home', function () {
 
 Route::get('/register', function () {
     return view('auth.register');
-});
+})->name('register');
 
 Route::post('/register', 'Auth\RegisterController@create');
 

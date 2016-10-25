@@ -84,7 +84,7 @@
                     Você já está logado!</br>
                     Redirecionando...
                     <?php
-                    header( "refresh:3;url=/home" );
+                    header( "refresh:2.5;url=/home" );
                     ?>
                 </div>
             </div>
