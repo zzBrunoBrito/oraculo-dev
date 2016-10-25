@@ -1,7 +1,7 @@
 @section('title','Oráculo-Login')
 @extends('layouts.app')
 
-@if (!Auth::check())
+@if (Auth::guest())
 @section('content')
 <div class="container">
     <div class="row">

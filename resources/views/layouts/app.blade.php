@@ -53,13 +53,12 @@
 
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
             <!-- Left Side Of Navbar -->
-            <ul class="nav navbar-nav">
+            
             @if(Auth::check())
+                <ul class="nav navbar-nav">
                     <li><a href="{{ url('/home') }}">Home</a></li>
-            @endif
 
             {{--Se o usuário estiver logado, renderiza isso na barra--}}
-            @if(Auth::check())
                     <li class="dropdown">
                         <a class="dropdown-toggle" type="button" data-toggle="dropdown" data-hover="dropdown">Cadastro<span class="caret"></span></a>
                         <ul class="dropdown-menu">
@@ -119,29 +118,28 @@
                     {{--<li><a href="">Relatórios</a></li>--}}
                     {{--<li><a href="">Dashboard</a></li>--}}
                     {{--<li><a href="">Sistema</a></li>--}}
-            @endif
+                </ul>
 
-            </ul>
-            <!-- Right Side Of Navbar -->
-            <ul class="nav navbar-nav navbar-right">
-                <!-- Authentication Links -->
-                @if (Auth::guest())
-                    <li><a href="{{ url('/login') }}">Login</a></li>
-                    <li><a href="{{ url('/register') }}">Register</a></li>
-                @else
+
+                {{-- Menu direito --}}
+
+                <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                         {{Session('nome')}}
-
-
-                         <span class="caret"></span>
-                        </a>
+                         <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                         </ul>
                     </li>
-                @endif
-            </ul>
+                </ul>
+
+            @else
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{{ url('/login') }}">Login</a></li>
+                    <li><a href="{{ url('/register') }}">Register</a></li>
+                </ul>
+            @endif
         </div>
     </div>
 </nav>
@@ -150,7 +148,16 @@
 @if(Request::url() === 'your url here')
     // code
 @endif
+
+if(Auth::guest() && $request->path() != 'login')
+    {
+        return Redirect::guest('login');
+    }
+
+
+
 !-->
+
 @yield('content')
 
 
