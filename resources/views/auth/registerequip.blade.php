@@ -156,7 +156,7 @@
                             <label for="telefone" class="col-md-4 control-label">Telefone</label>
 
                             <div class="col-md-6">
-                                <input id="telefone" type="text" class="form-control" name="telefone">
+                                <input id="telefone" type="number" class="form-control" name="telefone">
 
                             </div>
                             </div>
