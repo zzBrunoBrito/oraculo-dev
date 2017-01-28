@@ -2,56 +2,77 @@
 @extends('layouts.app')
 
 @section('content')
+
+<style>
+td {
+    width:30%;
+}
+th{
+    width:30%;
+}
+
+</style>
+
+
+<script>
+
+function droptable(arrow,i){
+
+    var newTable = 
+    "<table class='table table-striped'style='margin-left: 5%; width: 95%'>"+
+        "<tr><th>Evento Ocorrido</th><tr>"+
+        "<tr><td>lalala</td><tr>"+
+    "</table>";
+
+    if(arrow.className == "glyphicon glyphicon-menu-right"){
+        arrow.className = "glyphicon glyphicon-menu-down";
+
+        $("#line"+i).append(newTable);
+    }
+    else  {
+        arrow.className = "glyphicon glyphicon-menu-right";
+        document.getElementById("line"+i).innerHTML = " ";
+    }
+
+}
+
+</script>
+
 <div class="container">
     <div class="panel panel-default ">
         
         <div class="panel-body">
-        <table style="width:100%">
-        <tr>
-            <th>Nome do Equipamento</th>
-            <th>Data de Instalação</th> 
-            <th>Data de Registro</th>
-        </tr>
+        <table class="table table-striped table-responsive">
+            <tr>
+              <th class="col-md-2" >Nome do Equipamento</th>
+              <th class="col-md-2" style="text-align: center">Data de Instalação</th> 
+              <th class="col-md-2" style="text-align: center">Data de Registro</th>
+            </tr>
         
-        <?php
-        foreach ($equip as $e) {
-            echo '<tr>';
-            echo '<td>'.$e->nome.'</td>';
-            echo '<td>'.$e->data_instalacao.'</td>';
-            echo '<td>'.$e->created_at.'</td>';
-        }
-        ?>
-
-        <!--
-        Tabela com tuas viadagens de responsivo e tudo mais...
-        E tbm que dê pra clicar nela, e descer um menuzim, que vai ser só outra tabela(s).
-        Manda só o codigo de uma aki mesmo, q eu faço minhas gambiarras pro resto <3 :v
-        obs: Vai ter tbm os 'títulos' em cima,só o nome das colunas, faça legalzim e.e
-        obs2: Gambatte Lucas-kun!
-        obs3: Faça logo, vagabundo! u.u
-        Ex pra tu mandar:
-
-        <table style="width:100%">
-        <tr>
-        <th>Firstname</th>
-        <th>Lastname</th> 
-        <th>Age</th>
-        </tr>
-        <tr>
-        <td>Jill</td>
-        <td>Smith</td> 
-        <td>50</td>
-        </tr>
-        <tr>
-        <td>Eve</td>
-        <td>Jackson</td> 
-        <td>94</td>
-        </tr>
-        </table>
         
-        !-->
+        
+        @foreach ($equip as $i=>$e) 
+            <table class="table table-striped">
+            <td class="col-md-2">
+                <a href="#" style="color: #555555">
+                <span class="glyphicon glyphicon-menu-right" onclick="droptable(this,{{$i}})">
+                {{ $e->nome }}</span></a>
 
-        </table>
+            </td>  
+                
+            <td class="col-md-2" style="text-align: center">
+                {{$e->data_instalacao}}
+            </td>
+            
+            <td class="col-md-2" style="text-align: center">
+                {{$e->created_at}}
+            </td>
+            </table>
+
+            <p id="line{{$i}}"></p>
+
+        @endforeach
+        </table>    
 
         </div>
     </div>
