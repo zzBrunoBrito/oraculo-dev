@@ -144,20 +144,6 @@
     </div>
 </nav>
 
-<!--wisney-depois e.e
-if(Request::url() === 'your url here')
-    // code
-endif
-if(Auth::guest() && ((!Route::current()->getName() == '/') ||
-                      (!Route::current()->getName() == 'register') ||
-                      (!Route::current()->getName() == 'login')))
-    {
-        {{Route::current()->getName()}}
-        redirect('login');
-    }
-
-!-->
-
 @yield('content')
 
 
