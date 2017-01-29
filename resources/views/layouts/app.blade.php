@@ -69,7 +69,7 @@
 
             {{--Se o usuário estiver logado, renderiza isso na barra--}}
                     <li class="dropdown">
-                        <a class="dropdown-toggle" type="button" data-toggle="dropdown" data-hover="dropdown">Cadastro<span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" type="button" data-toggle="dropdown" data-hover="dropdown">Cadastro<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="/register-equip">Equipamentos</a></li>
                             <li><a href="#">Componentes</a></li>
@@ -80,7 +80,7 @@
                     </li>
 
                     <li class="dropdown">
-                        <a class="dropdown-toggle" type="button" data-toggle="dropdown" data-hover="dropdown">Entrada de Dados<span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" type="button" data-toggle="dropdown" data-hover="dropdown">Entrada de Dados<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">Registro de Eventos</a></li>
                             <li><a href="#">Registro de Vistoria</a></li>
@@ -98,7 +98,7 @@
                     </li>
 
                     <li class="dropdown">
-                        <a class="dropdown-toggle" type="button" data-toggle="dropdown" data-hover="dropdown">Relatórios<span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" type="button" data-toggle="dropdown" data-hover="dropdown">Relatórios<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="/histequip">Histórico do Equipamento</a></li>
                             <li><a href="#">Inventários</a></li>
@@ -108,7 +108,7 @@
                     </li>
 
                     <li class="dropdown">
-                        <a class="dropdown-toggle" type="button" data-toggle="dropdown" data-hover="dropdown">Dashboard<span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" type="button" data-toggle="dropdown" data-hover="dropdown">Dashboard<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">Parâmetros Monitorados</a></li>
                             <li><a href="#">Status das Equipes</a></li>
