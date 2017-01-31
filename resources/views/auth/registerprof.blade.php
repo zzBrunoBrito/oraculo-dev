@@ -108,7 +108,7 @@
                             </div>
 
                             <div class="form-group">
-                            <label for="cidade" class="col-md-4 control-label">Cidade.</label>
+                            <label for="cidade" class="col-md-4 control-label">Cidade</label>
 
                             <div class="col-md-6">
                                 <input id="cidade" type="text" class="form-control" name="cidade">
