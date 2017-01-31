@@ -24,6 +24,9 @@ class CreateProfissionalTable extends Migration
             $table->foreign('users_id')->references('id')->on('users')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
+            $table->foreign('empresa_id')->references('id')->on('empresa')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 

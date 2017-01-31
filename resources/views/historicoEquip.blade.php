@@ -17,12 +17,24 @@ th{
 <script>
 
 function droptable(arrow,i){
-
+    //Adiciona a subtabela dos eventos ocorridos quando clica no equipamento
     var newTable = 
-    "<table class='table table-striped'style='margin-left: 5%; width: 95%'>"+
-        "<tr><th>Evento Ocorrido</th><tr>"+
-        "<tr><td>lalala</td><tr>"+
+    "<table class='table table-striped' style='margin-left: 5%; width: 95%'>"+
+        "<tr>"+
+        "<th class='col-md-3'>Evento Ocorrido</th>"+
+        "<th class='col-md-3'>Data de Instalação</th>"+ 
+        "<th class='col-md-3'>Data de Registro</th>"+
+        "</tr>"+
+
+        "<tr class='table table-striped' style='text-align: left'>"+
+        "<td class='col-md-3'>Quebra da correia</td>"+
+        "<td class='col-md-3'>2016-10-10</td>"+
+        "<td class='col-md-3'>2016-10-10</td>"+
+        "</tr>"+
     "</table>";
+
+
+        
 
     if(arrow.className == "glyphicon glyphicon-menu-right"){
         arrow.className = "glyphicon glyphicon-menu-down";
