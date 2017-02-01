@@ -45,4 +45,6 @@ Route::get('/register-equip', function () {
 
 Route::post('/register-equip', 'EquipamentoController@create');
 
-Route::get('/histequip', 'HistEquipController@consulta');
+Route::get('/histequip', 'EquipController@consultaHistorico');
+
+Route::get('/inventarioEquip', 'EquipController@consultaInventario');

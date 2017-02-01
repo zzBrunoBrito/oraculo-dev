@@ -22,14 +22,14 @@ function droptable(arrow,i){
     "<table class='table table-striped' style='margin-left: 5%; width: 95%'>"+
         "<tr>"+
         "<th class='col-md-3'>Evento Ocorrido</th>"+
-        "<th class='col-md-3'>Data de Instalação</th>"+ 
+        "<th class='col-md-3'>Data do Ocorrido</th>"+
         "<th class='col-md-3'>Data de Registro</th>"+
         "</tr>"+
 
         "<tr class='table table-striped' style='text-align: left'>"+
         "<td class='col-md-3'>Quebra da correia</td>"+
         "<td class='col-md-3'>2016-10-10</td>"+
-        "<td class='col-md-3'>2016-10-10</td>"+
+        "<td class='col-md-3'>2016-11-10 05:06:10</td>"+
         "</tr>"+
     "</table>";
 
@@ -55,6 +55,7 @@ function droptable(arrow,i){
         
         <div class="panel-body">
         <table class="table table-striped table-responsive">
+
             <tr>
               <th class="col-md-2" >Nome do Equipamento</th>
               <th class="col-md-2" style="text-align: center">Data de Instalação</th> 
@@ -73,7 +74,7 @@ function droptable(arrow,i){
             </td>  
                 
             <td class="col-md-2" style="text-align: center">
-                {{$e->data_instalacao}}
+                {{$e->data_instalacao}} 
             </td>
             
             <td class="col-md-2" style="text-align: center">
