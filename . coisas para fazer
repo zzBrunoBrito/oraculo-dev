@@ -1,6 +1,10 @@
-Fazer a validação dos campos de cadastro de equipamento quando clicado em registrar novo equipamento.
+Fazer a validação dos campos de cadastro de equipamentouando clicado em registrar novo equipamento.
+Fazer upload da imagem do equipamento e upload do manual.
+Poder clonar o equipamento, permitindo que se possa alterar alguns campos para facilitar o registro de equipamentos parecidos.
 
 Fazer o registro de evento dos equipamentos e terminar a tabela de historico de equipamentos.
+//A pessoa deve criar a ocorrencia quando equipamento quebrar, e fecha-la quando terminar o reparo,
+//informando os dados da assistencia tecnica que o fez
 
 Esqueci a senha.
 
